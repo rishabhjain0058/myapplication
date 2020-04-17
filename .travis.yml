@@ -1,6 +1,7 @@
-#language: php
+language: php
 before_install:    
 script:
+  phpunit
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1" #aws region
