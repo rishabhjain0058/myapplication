@@ -1,9 +1,12 @@
-language: php
-php:
- - 5.5
- - 7.2
- - hhvm
-before_script:
- - composer self-update
- - composer install --prefer-source --no-interaction --dev   
-script: phpunit
+language: generic
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1" #aws region
+  app: "myapplication"  #application name
+  env: "myapplication-env" #environmnet name of your Elastic beanstalk
+  bucket_name: "elasticbeanstalk-us-east-1-752544634715"
+  bucket_path: "myapplication" #path of the folder of your elasticbeanstalk application
+  on:
+    branch: master
+  access-key-id: $aws_access_key  #environmnet variable passed under travis
+  secrect-access-key: $aws_secret_key  #environmnet variable passed under travis
