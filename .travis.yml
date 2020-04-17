@@ -1,9 +1,14 @@
+#language: php
+
+sudo: required
+   
+before_install:    
+script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1" #aws region
   app: "myapplication"  #application name
   env: "myapplication-env" #environmnet name of your Elastic beanstalk
-  zip-file: php-v2.zip
   bucket_name: "elasticbeanstalk-us-east-1-752544634715"
   bucket_path: "myapplication" #path of the folder of your elasticbeanstalk application
   on:
