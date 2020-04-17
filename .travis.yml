@@ -1,7 +1,4 @@
 #language: php
-
-sudo: required
-   
 before_install:    
 script:
 deploy:
